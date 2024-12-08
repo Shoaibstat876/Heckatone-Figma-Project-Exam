@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   return (
@@ -31,10 +32,12 @@ const Header = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Left Section: Logo and Brand Name */}
           <div className="flex items-center space-x-4">
-            <img 
-              src="/assets/images/Logo Icon-1.png" 
-              alt="Logo" 
-              className="w-10 h-10 rounded-full" 
+            <Image
+              src="/assets/images/Logo Icon-1.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
             />
             <h1 className="text-2xl font-bold text-black">Comforty</h1>
           </div>
