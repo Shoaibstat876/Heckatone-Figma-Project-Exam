@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Layout from '@/components/layout/Layout'; // Import Layout for consistent page structure
 
 // Product data
@@ -31,10 +32,12 @@ const ProductPage = () => {
               className="border rounded-lg p-4 shadow hover:shadow-lg transition"
             >
               <div className="relative">
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover rounded-md"
+                  width={300}
+                  height={200}
+                  className="object-cover rounded-md"
                 />
                 {product.badge && (
                   <span
@@ -97,12 +100,14 @@ const ProductPage = () => {
           </h2>
           <div className="flex overflow-x-scroll space-x-4">
             {products.map((product) => (
-              <img
-                key={product.id}
-                src={product.image}
-                alt={product.name}
-                className="w-40 h-40 object-cover rounded-md"
-              />
+              <div key={product.id} className="relative w-40 h-40">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  layout="fill"
+                  className="object-cover rounded-md"
+                />
+              </div>
             ))}
           </div>
         </div>
