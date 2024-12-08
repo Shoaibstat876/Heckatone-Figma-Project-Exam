@@ -7,7 +7,7 @@ import '../styles/globals.css';
 import { AppProps } from 'next/app';
 
 // Import Header for potential global use (e.g., site-wide navigation)
-import Header from '@/components/layout/Header';
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
