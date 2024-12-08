@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Layout from '@/components/layout/Layout';
 
 const features = [
@@ -51,9 +52,11 @@ const AboutPage = () => {
 
           {/* Right Column */}
           <div>
-            <img
+            <Image
               src="/assets/images/Image-5.png"
               alt="About Us"
+              width={600}
+              height={400}
               className="rounded-lg shadow-lg"
             />
           </div>
@@ -89,11 +92,15 @@ const AboutPage = () => {
                 key={product.id}
                 className="border rounded-lg p-4 shadow hover:shadow-lg transition"
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-48 object-cover rounded-md"
-                />
+                <div className="relative w-full h-48">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-md"
+                  />
+                </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-800">{product.name}</h3>
                 <p className="text-gray-600 mt-2">{product.price}</p>
               </div>

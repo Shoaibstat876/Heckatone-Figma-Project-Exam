@@ -1,4 +1,5 @@
 import React from 'react'; // Import React for JSX
+import Image from 'next/image'; // Import Next.js Image for optimized image handling
 
 // Sample product data
 const products = [
@@ -47,11 +48,13 @@ const FeaturedProducts = () => {
               className="border rounded-lg p-4 shadow hover:shadow-lg transition"
             >
               {/* Product Image Section */}
-              <div className="relative">
-                <img
+              <div className="relative w-full h-48">
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover rounded-md"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-md"
                 />
                 {/* Badge for New or Sale Items */}
                 {product.badge && (
