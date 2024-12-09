@@ -27,8 +27,8 @@ const features = [
 
 const products = [
   { id: 1, image: '/assets/images/sofa-big.png', name: 'The Poplar suede sofa', price: '$99.00' },
-  { id: 2, image: '/assets/images/dandy.png', name: 'The Dandy chair', price: '$99.00' },
-  { id: 3, image: '/assets/images/lonely.png', name: 'Lonely Chair', price: '$99.00' },
+  { id: 2, image: '/assets/images/black-chair.png', name: 'The Dandy chair', price: '$99.00' },
+  { id: 3, image: '/assets/images/dark-chair.png', name: 'Lonely Chair', price: '$99.00' },
 ];
 
 const AboutPage = () => {
