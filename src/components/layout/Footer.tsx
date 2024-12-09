@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import Image from 'next/image';
 const Footer = () => {
   return (
     <footer className="bg-white py-10 border-t border-gray-200">
@@ -11,10 +11,8 @@ const Footer = () => {
         <div>
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-teal-500 rounded-full"></div> {/* Placeholder for Logo */}
-            {/* Replace above placeholder with your logo image like:
-              <img src="/path-to-logo.png" alt="Comforty Logo" className="w-8 h-8" />
-            */}
+          <Image src="/assets/images/Logo Icon-1.png" alt="Comforty Logo" width={32} height={32} />
+            
             <h1 className="text-lg font-bold text-gray-800">Comforty</h1> {/* Brand name */}
           </div>
           {/* Description Text */}
