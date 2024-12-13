@@ -8,8 +8,11 @@ const Header = () => {
   return (
     <header>
       {/* Layer 1: Purple Background */}
-      <div className="bg-purple-900 text-white text-sm py-2">
+      <div className="bg-purple-900 text-white text-sm py-2 font-">
         <div className="container mx-auto px-6 flex justify-between items-center">
+
+
+          
           {/* Free Shipping Info */}
           <div className="flex items-center space-x-2">
             <span className="text-white">✔</span>

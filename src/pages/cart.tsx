@@ -6,7 +6,7 @@ import Layout from '@/components/layout/Layout';
 const cartItems = [
   {
     id: 1,
-    image: '/assets/images/product-4.jpg', // Path to product image
+    image: '/assets/images/Image-2.png', // Path to product image
     name: 'Library Stool Chair', // Product name
     details: 'Ashen Slate/Cobalt Bliss', // Additional details
     size: 'L', // Product size
@@ -15,7 +15,7 @@ const cartItems = [
   },
   {
     id: 2,
-    image: '/assets/images/product-5.jpg',
+    image: '/assets/images/Image-27.png',
     name: 'Library Stool Chair',
     details: 'Ashen Slate/Cobalt Bliss',
     size: 'L',

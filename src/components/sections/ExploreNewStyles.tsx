@@ -3,78 +3,84 @@ import Image from 'next/image';
 
 const ExploreNewStyles = () => {
   return (
-    <section className="py-16"> {/* Main Section Wrapper */}
-      {/* Container for Alignment and Layout */}
-      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center">
-        {/* Vertical Title */}
-        <div className="w-full lg:w-1/4 text-center lg:text-left">
-          {/* Title with Rotation for Small Screens */}
-          <h2 className="text-lg font-bold text-gray-800 transform rotate-90 lg:rotate-0 lg:translate-x-0 lg:translate-y-0 lg:-ml-4 lg:pl-4">
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-start lg:space-x-6">
+        {/* Title Section */}
+        <div className="w-full lg:w-1/4 flex lg:block justify-center lg:justify-start lg:items-center">
+          <h2 className="text-xl font-bold text-gray-800 transform lg:rotate-90 lg:origin-left lg:whitespace-nowrap">
             Explore New and Popular Styles
           </h2>
-          {/* 
-            - On smaller screens (default), the title is rotated 90 degrees (`rotate-90`).
-            - On larger screens (`lg:`), the rotation is reset (`rotate-0`), and the title is aligned to the left (`text-left`).
-            - `-ml-4` and `pl-4` are added for proper alignment on larger screens.
-          */}
         </div>
 
-        {/* Image Layout */}
-        <div className="w-full lg:w-3/4 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left Large Image */}
-          <div className="relative col-span-1">
-            <Image
-              src="/assets/images/Image-8.png" // Replace with the correct image path
-              alt="Large Style"
-              width={600}
-              height={400}
-              className="rounded-lg object-cover w-full"
-            />
-          </div>
+        {/* Products Grid Section */}
+        <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="border rounded-lg p-4 shadow hover:shadow-lg transition"
+            >
+              {/* Product Image */}
+              <div className="relative w-full h-48">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-md"
+                />
+                {/* Badge (New or Sale) */}
+                {product.badge && (
+                  <span
+                    className={`absolute top-2 left-2 px-2 py-1 text-xs font-bold text-white rounded ${
+                      product.badge === 'New' ? 'bg-green-500' : 'bg-red-500'
+                    }`}
+                  >
+                    {product.badge}
+                  </span>
+                )}
+              </div>
 
-          {/* Right Grid Images */}
-          <div className="grid grid-cols-2 gap-4">
-            {/* First Small Image */}
-            <div className="relative w-full aspect-w-1 aspect-h-1">
-              <Image
-                src="/assets/images/Image-9.png"
-                alt="Style 1"
-                layout="fill"
-                className="object-cover rounded-lg"
-              />
+              {/* Product Name */}
+              <h3 className="mt-4 text-lg font-semibold text-gray-800">
+                {product.name}
+              </h3>
+
+              {/* Price and Add-to-Cart Button */}
+              <div className="flex items-center justify-between mt-2">
+                <p className="text-gray-600">
+                  {product.badge === 'Sale' && (
+                    <span className="line-through text-gray-400 mr-2">
+                      {product.originalPrice}
+                    </span>
+                  )}
+                  {product.price}
+                </p>
+                {/* Add-to-Cart Button */}
+                <button
+                  className="bg-teal-500 text-white p-2 rounded-full hover:bg-teal-600"
+                  aria-label={`Add ${product.name} to Cart`}
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                </button>
+              </div>
             </div>
-            {/* Second Small Image */}
-            <div className="relative w-full aspect-w-1 aspect-h-1">
-              <Image
-                src="/assets/images/Image-24.png"
-                alt="Style 2"
-                layout="fill"
-                className="object-cover rounded-lg"
-              />
-            </div>
-            {/* Third Small Image */}
-            <div className="relative w-full aspect-w-1 aspect-h-1">
-              <Image
-                src="/assets/images/Image-24.png"
-                alt="Style 3"
-                layout="fill"
-                className="object-cover rounded-lg"
-              />
-            </div>
-            {/* Fourth Small Image */}
-            <div className="relative w-full aspect-w-1 aspect-h-1">
-              <Image
-                src="/assets/images/Image-5.png"
-                alt="Style 4"
-                layout="fill"
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
+
+// Product Data (Array)
+const products = [
+  { id: 1, image: '/assets/images/Image-5.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
+  { id: 2, image: '/assets/images/Image-6.png', name: 'Library Stool Chair', price: '$20', badge: 'Sale', originalPrice: '$50' },
+  { id: 3, image: '/assets/images/Image-8.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 4, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 5, image: '/assets/images/Image-27.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 6, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 7, image: '/assets/images/Image-28.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
+  { id: 8, image: '/assets/images/Image-17.png', name: 'Library Stool Chair', price: '$20' },
+];
 
 export default ExploreNewStyles;
