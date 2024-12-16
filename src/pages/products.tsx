@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Layout from '@/components/layout/Layout'; // Import Layout for consistent page structure
+import Layout from '@/components/layout/Layout';
 
 // Product data
 const products = [
@@ -17,6 +17,8 @@ const products = [
 const ProductPage = () => {
   return (
     <Layout>
+      <br />
+      <br />
       <section className="py-10">
         <div className="container mx-auto px-6">
           <h1 className="text-3xl font-bold text-gray-800">All Products</h1>
@@ -104,8 +106,9 @@ const ProductPage = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="fill"
-                  className="object-cover rounded-md"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-md"
                 />
               </div>
             ))}

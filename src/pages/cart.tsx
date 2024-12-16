@@ -47,8 +47,8 @@ const CartPage = () => {
                       <Image
                         src={item.image}
                         alt={item.name}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: 'cover' }}
                         className="rounded-md"
                       />
                     </div>

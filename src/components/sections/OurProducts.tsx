@@ -1,16 +1,103 @@
-import React from 'react'; // Import React for JSX
-import Image from 'next/image'; // Import Next.js Image for optimized image handling
+import React from 'react'; // Importing React for JSX
+import Image from 'next/image'; // Importing Next.js Image for optimized image handling
+import { PiShoppingCartSimpleLight } from 'react-icons/pi'; // Import the cart icon from Phosphor React
 
-// Array of product data
+// Array of product data with independent styling for each product
 const products = [
-  { id: 1, image: '/assets/images/Image-5.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
-  { id: 2, image: '/assets/images/Image-6.png', name: 'Library Stool Chair', price: '$20', badge: 'Sale', originalPrice: '$50' },
-  { id: 3, image: '/assets/images/Image-8.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 4, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 5, image: '/assets/images/Image-27.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 6, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 7, image: '/assets/images/Image-28.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
-  { id: 8, image: '/assets/images/Image-17.png', name: 'Library Stool Chair', price: '$20' },
+  { 
+    id: 1, 
+    image: '/assets/images/Image-5.png', 
+    name: 'Library Stool Chair', 
+    price: '$20', 
+    badge: 'New',
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#007580]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#029fae] hover:bg-teal-600',
+    iconColor: 'text-white'
+  },
+  { 
+    id: 2, 
+    image: '/assets/images/Image-6.png', 
+    name: 'Library Stool Chair', 
+    price: '$30', 
+    badge: 'Sale', 
+    originalPrice: '$20',
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',  
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
+  { 
+    id: 3, 
+    image: '/assets/images/Image-8.png', 
+    name: 'Library Stool Chair', 
+    price: '$25', 
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
+  { 
+    id: 4, 
+    image: '/assets/images/Image-9.png', 
+    name: 'Library Stool Chair', 
+    price: '$20', 
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
+  { 
+    id: 5, 
+    image: '/assets/images/Image-14.png', 
+    name: 'Library Stool Chair', 
+    price: '$20', 
+    badge: 'New',
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
+  { 
+    id: 6, 
+    image: '/assets/images/Image-24.png', 
+    name: 'Library Stool Chair', 
+    price: '$30', 
+    badge: 'Sale', 
+    originalPrice: '$50',
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
+  { 
+    id: 7, 
+    image: '/assets/images/Image-25.png', 
+    name: 'Library Stool Chair', 
+    price: '$20', 
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
+  { 
+    id: 8, 
+    image: '/assets/images/Image-5.png', 
+    name: 'Library Stool Chair', 
+    price: '$20', 
+    imageStyle: { width: 312, height: 312 },
+    nameStyle: 'text-lg font-[400] text-[#000000]',
+    priceStyle: 'text-[#000000] font-[400]',
+    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600', 
+    iconColor: 'text-black'
+  },
 ];
 
 const OurProducts = () => {
@@ -18,7 +105,7 @@ const OurProducts = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
         {/* Section Title */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Our Products</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Our Products</h2> {/* Centered Heading */}
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -28,19 +115,19 @@ const OurProducts = () => {
               className="border rounded-lg p-4 shadow hover:shadow-lg transition"
             >
               {/* Product Image */}
-              <div className="relative w-full h-48">
+              <div className="relative w-full h-60"> {/* Adjusted height for card size */}
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-md"
+                  width={product.imageStyle.width}
+                  height={product.imageStyle.height}
+                  className={`rounded-md`}
                 />
                 {/* Badge for New or Sale */}
                 {product.badge && (
                   <span
                     className={`absolute top-2 left-2 px-2 py-1 text-xs font-bold text-white rounded ${
-                      product.badge === 'New' ? 'bg-green-500' : 'bg-red-500'
+                      product.badge === 'New' ? 'bg-green-500' : 'bg-orange-500'
                     }`}
                   >
                     {product.badge}
@@ -49,26 +136,30 @@ const OurProducts = () => {
               </div>
 
               {/* Product Name */}
-              <h3 className="mt-4 text-lg font-semibold text-gray-800">
+              <h3 className={`${product.nameStyle} mt-4 text-gray-800`}>
                 {product.name}
               </h3>
 
               {/* Product Price and Add-to-Cart Button */}
               <div className="flex items-center justify-between mt-2">
                 <p className="text-gray-600">
-                  {product.badge === 'Sale' && (
-                    <span className="line-through text-gray-400 mr-2">
-                      {product.originalPrice}
-                    </span>
+                  {/* Display sale price for product with id 2 and id 6 */}
+                  {product.id === 2 || product.id === 6 ? (
+                    <>
+                      <span className="text-black mr-2">{product.originalPrice}</span> {/* Original price */}
+                      <span className="text-gray-500 font-[400] line-through">{product.price}</span> {/* Strike-through sale price */}
+                    </>
+                  ) : (
+                    <span className={product.priceStyle}>{product.price}</span> // Normal price for other products
                   )}
-                  {product.price}
                 </p>
+
                 {/* Cart Icon Button */}
                 <button
-                  className="bg-teal-500 text-white p-2 rounded-full hover:bg-teal-600"
+                  className={`${product.cartColor} text-white p-2 rounded-full hover:bg-opacity-80`} 
                   aria-label="Add to Cart"
                 >
-                  <i className="fas fa-shopping-cart"></i>
+                  <PiShoppingCartSimpleLight size={24} className={product.iconColor} />
                 </button>
               </div>
             </div>

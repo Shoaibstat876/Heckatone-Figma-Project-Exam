@@ -96,8 +96,8 @@ const AboutPage = () => {
                   <Image
                     src={product.image}
                     alt={product.name}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                     className="rounded-md"
                   />
                 </div>

@@ -2,24 +2,31 @@ import React from 'react';
 import Link from 'next/link';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Image from 'next/image';
-const Footer = () => {
+
+const Footer: React.FC = () => {
   return (
     <footer className="bg-white py-10 border-t border-gray-200">
       {/* Footer Container */}
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
         {/* Left Section: Logo & Description */}
         <div>
           {/* Logo Section */}
           <div className="flex items-center space-x-2">
-          <Image src="/assets/images/Logo Icon-1.png" alt="Comforty Logo" width={32} height={32} />
-            
+            <Image
+              src="/assets/images/Logo Icon-1.png"
+              alt="Comforty Logo"
+              width={32}
+              height={32}
+            />
             <h1 className="text-lg font-bold text-gray-800">Comforty</h1> {/* Brand name */}
           </div>
+          
           {/* Description Text */}
           <p className="mt-4 text-gray-600 text-sm leading-relaxed">
-            Vivamus tristique odio sit amet velit semper, eu posuere turpis
-            interdum. Cras egestas purus.
+            Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. Cras egestas purus.
           </p>
+          
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4">
             {/* Individual Social Icon */}
@@ -128,8 +135,7 @@ const Footer = () => {
           </div>
           {/* Newsletter Description */}
           <p className="mt-4 text-xs text-gray-600 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            tincidunt erat enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.
           </p>
         </div>
       </div>

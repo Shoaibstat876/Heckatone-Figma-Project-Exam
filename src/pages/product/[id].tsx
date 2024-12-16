@@ -76,7 +76,8 @@ const SingleProductPage = () => {
                   alt={product.name}
                   width={200}
                   height={160}
-                  className="rounded-md object-cover"
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-md"
                 />
                 <h3 className="mt-4 text-gray-800">{product.name}</h3>
                 <p className="text-gray-600">{product.price}</p>

@@ -10,7 +10,7 @@ const ContactPage = () => {
           Section Styling:
           - `py-16`: Adds vertical padding for spacing.
         */}
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 ">
           {/* 
             Grid Layout:
             - Single column (`grid-cols-1`) for small screens.
