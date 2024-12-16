@@ -1,13 +1,13 @@
-import React from 'react'; // Importing React for JSX
-import Image from 'next/image'; // Importing Next.js Image for optimized image handling
+import React from "react";
+import Image from "next/image";
 
 const HeroSection = () => {
   return (
     <section className="bg-gray-50 py-16">
-      {/* Main section */}
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center">
+      {/* Main Section */}
+      <div className="container mx-auto max-w-screen-lg flex flex-col-reverse lg:flex-row items-center">
         {/* Text Content */}
-        <div className="lg:w-1/2 text-center lg:text-left px-6">
+        <header className="lg:w-1/2 text-center lg:text-left px-6">
           <p className="text-sm text-gray-500 uppercase tracking-wide">
             Welcome to Chairy
           </p>
@@ -15,21 +15,26 @@ const HeroSection = () => {
             Best Furniture Collection For Your Interior.
           </h1>
           <p className="mt-4 text-gray-600">
-            Discover our exclusive collection of furniture designed for comfort and elegance.
+            Discover our exclusive collection of furniture designed for comfort
+            and elegance.
           </p>
-          <button className="mt-6 px-6 py-3 bg-teal-500 text-white rounded-lg shadow hover:bg-teal-600">
+          <button
+            className="mt-6 px-6 py-3 bg-teal-500 text-white rounded-lg shadow hover:bg-teal-600 transition"
+            aria-label="Shop Now"
+          >
             Shop Now <span className="ml-2">→</span>
           </button>
-        </div>
+        </header>
 
-        {/* Image */}
+        {/* Image Section */}
         <div className="lg:w-1/2 flex justify-center">
           <Image
-            src="/assets/images/Product Image.png" // Path to the hero image
-            alt="Hero Chair" // Alt text for accessibility
-            width={600} // Adjust the width as needed
-            height={400} // Adjust the height as needed
+            src="/assets/images/Product Image.png"
+            alt="Stylish and comfortable chair for your home"
+            width={600}
+            height={400}
             className="rounded-lg"
+            priority={true} // Ensures faster loading for hero image
           />
         </div>
       </div>

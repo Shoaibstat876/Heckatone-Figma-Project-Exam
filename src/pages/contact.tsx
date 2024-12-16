@@ -129,7 +129,7 @@ const ContactPage = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-900 text-white font-medium rounded-lg hover:bg-blue-800"
+                className="w-full px-6 py-3 bg-teal-500 text-white font-medium rounded-lg hover:bg-green-800"
               >
                 Submit
               </button>

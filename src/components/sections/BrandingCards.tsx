@@ -1,37 +1,37 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
 
 const BrandingSection = () => {
+  const logos = [
+    { src: "/assets/images/Logo-6.png", alt: "Zapier", height: 87, width: 85 },
+    { src: "/assets/images/Logo-7.png", alt: "Pipedrive", height: 109, width: 107 },
+    { src: "/assets/images/Logo-8.png", alt: "CIB BANK", height: 139, width: 135 },
+    { src: "/assets/images/Logo-9.png", alt: "7", height: 65, width: 63 },
+    { src: "/assets/images/Logo-10.png", alt: "Burnt Toast", height: 101, width: 98 },
+    { src: "/assets/images/Logo-11.png", alt: "PandaDoc", height: 115, width: 113 },
+    { src: "/assets/images/Logo-12.png", alt: "Moz", height: 87, width: 84 },
+  ];
+
   return (
-    <section className="bg-[#ffffff] py-12">
-    {/* Container for branding logos */}
-    <div className="container mx-auto px-6">
-      <div className="flex flex-wrap justify-between items-center space-x-6">
-        {/* Branding Logos */}
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-6.png" alt="zapier" className="h-[87px] w-[85px]" />
-        </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-7.png" alt="pipedrive" className="h-[109px] w-[107px]" />
-        </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-8.png" alt="CIB BANK" className="h-[139px] w-[135px]" />
-        </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-9.png" alt="7" className="h-[65px] w-[63px]" />
-        </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-10.png" alt="Burnt Toast" className="h-[101px] w-[98px]" />
-        </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-11.png" alt="PandaDoc" className="h-[115px] w-[113px]" />
-        </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0">
-          <img src="/assets/images/Logo-12.png" alt="Moz" className="h-[87px] w-[84px]" />
+    <section className="bg-white py-12">
+      {/* Branding Logos Container */}
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center">
+          {logos.map((logo) => (
+            <figure key={logo.alt} className="flex items-center justify-center">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                className="max-h-32 object-contain"
+                priority // Ensures images load faster
+              />
+            </figure>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
   );
 };
 

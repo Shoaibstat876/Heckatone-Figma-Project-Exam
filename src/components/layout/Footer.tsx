@@ -1,17 +1,45 @@
-import React from 'react';
-import Link from 'next/link';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import Image from 'next/image';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faPinterest,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer: React.FC = () => {
+  const socialLinks = [
+    { icon: faFacebookF, href: "#", label: "Facebook" },
+    { icon: faTwitter, href: "#", label: "Twitter" },
+    { icon: faInstagram, href: "#", label: "Instagram" },
+    { icon: faPinterest, href: "#", label: "Pinterest" },
+    { icon: faYoutube, href: "#", label: "YouTube" },
+  ];
+
+  const categories = [
+    { name: "Sofa", href: "/cart" },
+    { name: "Armchair", href: "/cart" },
+    { name: "Wing Chair", href: "/cart" },
+    { name: "Desk Chair", href: "/cart" },
+    { name: "Wooden Chair", href: "/cart" },
+    { name: "Park Bench", href: "/cart" },
+  ];
+
+  const supportLinks = [
+    { name: "Help & Support", href: "/help-support" },
+    { name: "Terms & Conditions", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "FAQs", href: "/faqs" },
+  ];
+
   return (
     <footer className="bg-white py-10 border-t border-gray-200">
-      {/* Footer Container */}
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        {/* Left Section: Logo & Description */}
+      <div className="container mx-auto px-6 max-w-screen-lg grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Logo & Social Links */}
         <div>
-          {/* Logo Section */}
           <div className="flex items-center space-x-2">
             <Image
               src="/assets/images/Logo Icon-1.png"
@@ -19,123 +47,85 @@ const Footer: React.FC = () => {
               width={32}
               height={32}
             />
-            <h1 className="text-lg font-bold text-gray-800">Comforty</h1> {/* Brand name */}
+            <h1 className="text-lg font-bold text-gray-800">Comforty</h1>
           </div>
-          
-          {/* Description Text */}
           <p className="mt-4 text-gray-600 text-sm leading-relaxed">
-            Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. Cras egestas purus.
+            Vivamus tristique odio sit amet velit semper, eu posuere turpis
+            interdum. Cras egestas purus.
           </p>
-          
-          {/* Social Icons */}
           <div className="flex space-x-4 mt-4">
-            {/* Individual Social Icon */}
-            <a
-              href="#"
-              className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white cursor-pointer"
-              aria-label="Facebook"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="#"
-              className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white cursor-pointer"
-              aria-label="Twitter"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a
-              href="#"
-              className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white cursor-pointer"
-              aria-label="Instagram"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              href="#"
-              className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white cursor-pointer"
-              aria-label="Pinterest"
-            >
-              <i className="fab fa-pinterest"></i>
-            </a>
-            <a
-              href="#"
-              className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white cursor-pointer"
-              aria-label="YouTube"
-            >
-              <i className="fab fa-youtube"></i>
-            </a>
+            {socialLinks.map(({ icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white transition"
+              >
+                <FontAwesomeIcon icon={icon} />
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Center Section: Category Links */}
+        {/* Categories */}
         <div>
-          <h2 className="text-gray-800 font-semibold text-sm">CATEGORY</h2> {/* Section Title */}
+          <h2 className="text-gray-800 font-semibold text-sm">CATEGORY</h2>
           <ul className="mt-4 space-y-2 text-sm text-gray-600">
-            {/* Category Links */}
-            <li>
-              <Link href="/cart" className="hover:text-teal-500 cursor-pointer">
-                Sofa
-              </Link>
-            </li>
-            <li>
-              <Link href="/cart" className="hover:text-teal-500 cursor-pointer">
-                Armchair
-              </Link>
-            </li>
-            <li>
-              <Link href="/cart" className="hover:text-teal-500 cursor-pointer">
-                Wing Chair
-              </Link>
-            </li>
-            <li>
-              <Link href="/cart" className="hover:text-teal-500 cursor-pointer">
-                Desk Chair
-              </Link>
-            </li>
-            <li>
-              <Link href="/cart" className="hover:text-teal-500 cursor-pointer">
-                Wooden Chair
-              </Link>
-            </li>
-            <li>
-              <Link href="/cart" className="hover:text-teal-500 cursor-pointer">
-                Park Bench
-              </Link>
-            </li>
+            {categories.map(({ name, href }) => (
+              <li key={name}>
+                <Link
+                  href={href}
+                  className="hover:text-teal-500 transition"
+                  aria-label={`View ${name}`}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Support Links */}
+        {/* Support */}
         <div>
-          <h2 className="text-gray-800 font-semibold text-sm">SUPPORT</h2> {/* Section Title */}
+          <h2 className="text-gray-800 font-semibold text-sm">SUPPORT</h2>
           <ul className="mt-4 space-y-2 text-sm text-gray-600">
-            {/* Support Links */}
-            <li className="hover:text-teal-500 cursor-pointer">Help & Support</li>
-            <li className="hover:text-teal-500 cursor-pointer">Terms & Conditions</li>
-            <li className="hover:text-teal-500 cursor-pointer">Privacy Policy</li>
-            <li className="hover:text-teal-500 cursor-pointer">Help</li>
+            {supportLinks.map(({ name, href }) => (
+              <li key={name}>
+                <Link
+                  href={href}
+                  className="hover:text-teal-500 transition"
+                  aria-label={`Read ${name}`}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Newsletter Section */}
+        {/* Newsletter */}
         <div>
-          <h2 className="text-gray-800 font-semibold text-sm">NEWSLETTER</h2> {/* Section Title */}
-          <div className="mt-4 flex items-center space-x-2">
-            {/* Email Input Field */}
-            <input
-              type="email"
-              placeholder="Your email"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm"
-            />
-            {/* Subscribe Button */}
-            <button className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 text-sm">
-              Subscribe
-            </button>
-          </div>
-          {/* Newsletter Description */}
+          <h2 className="text-gray-800 font-semibold text-sm">NEWSLETTER</h2>
+          <form className="mt-4">
+            <div className="flex items-center space-x-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                aria-label="Enter your email"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm"
+              />
+              <button
+                type="submit"
+                className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 text-sm"
+                aria-label="Subscribe to Newsletter"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
           <p className="mt-4 text-xs text-gray-600 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            tincidunt erat enim.
           </p>
         </div>
       </div>
