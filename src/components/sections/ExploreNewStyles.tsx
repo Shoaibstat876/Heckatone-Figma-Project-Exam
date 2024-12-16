@@ -1,6 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
 
+// Product Data (Array)
+const products = [
+  { id: 1, image: '/assets/images/Image-5.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
+  { id: 2, image: '/assets/images/Image-6.png', name: 'Library Stool Chair', price: '$20', badge: 'Sale', originalPrice: '$50' },
+  { id: 3, image: '/assets/images/Image-8.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 4, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 5, image: '/assets/images/Image-27.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 6, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
+  { id: 7, image: '/assets/images/Image-28.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
+  { id: 8, image: '/assets/images/Image-17.png', name: 'Library Stool Chair', price: '$20' },
+];
+
 const ExploreNewStyles = () => {
   return (
     <section className="py-16 bg-white">
@@ -24,8 +36,8 @@ const ExploreNewStyles = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  fill
-                  style={{ objectFit: 'cover' }}
+                  layout="fill"
+                  objectFit="cover"
                   className="rounded-md"
                 />
                 {/* Badge (New or Sale) */}
@@ -71,16 +83,6 @@ const ExploreNewStyles = () => {
   );
 };
 
-// Product Data (Array)
-const products = [
-  { id: 1, image: '/assets/images/Image-5.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
-  { id: 2, image: '/assets/images/Image-6.png', name: 'Library Stool Chair', price: '$20', badge: 'Sale', originalPrice: '$50' },
-  { id: 3, image: '/assets/images/Image-8.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 4, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 5, image: '/assets/images/Image-27.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 6, image: '/assets/images/Image-9.png', name: 'Library Stool Chair', price: '$20' },
-  { id: 7, image: '/assets/images/Image-28.png', name: 'Library Stool Chair', price: '$20', badge: 'New' },
-  { id: 8, image: '/assets/images/Image-17.png', name: 'Library Stool Chair', price: '$20' },
-];
-
 export default ExploreNewStyles;
+
+
