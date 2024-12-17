@@ -45,21 +45,23 @@ const AboutPage = () => {
               Specializing in ergonomic design, premium materials, and modern aesthetics, we craft chairs that
               seamlessly blend style with functionality.
             </p>
-            <button className="mt-6 px-6 py-3 bg-green border text-white-900 font-medium rounded-lg hover:bg-teal-100">
+            <button className="mt-6 px-6 py-3 bg-teal-500 text-white-700 font-medium rounded-lg hover:bg-green-100">
               View collection
             </button>
           </div>
 
-          {/* Right Column - Image Section */}
-<div className="relative w-full h-[312px]">
-  <Image
-    src="/assets/images/Image-5.png"
-    alt="About Us"
-    width={320} // Matches Image-5 width
-    height={400} // Matches Image-5 height
-    className="rounded-lg shadow-lg object-cover" // Ensures consistent styling
-  />
-</div>
+          {/* Right Column */}
+          <div>
+            <div className="relative w-full h-[400px]">
+              <Image
+                src="/assets/images/Image-5.png"
+                alt="About Us"
+                layout="fill" // Ensures the image fills the container
+                objectFit="cover" // Maintains the aspect ratio without stretching
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -74,8 +76,8 @@ const AboutPage = () => {
                 className="bg-white border p-6 rounded-lg shadow-sm hover:shadow-md transition"
               >
                 <div className="text-4xl">{feature.icon}</div>
-                <h3 className="mt-4  text-[#007580] font-bold">{feature.title}</h3>
-                <p className="mt-2 text-[#007580] font-[400]">{feature.description}</p>
+                <h3 className="mt-4 font-bold text-gray-800">{feature.title}</h3>
+                <p className="mt-2 text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -92,12 +94,12 @@ const AboutPage = () => {
                 key={product.id}
                 className="border rounded-lg p-4 shadow hover:shadow-lg transition"
               >
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-48 sm:h-56 lg:h-60">
                   <Image
                     src={product.image}
                     alt={product.name}
-                    fill
-                    style={{ objectFit: 'cover' }}
+                    layout="fill"
+                    objectFit="cover"
                     className="rounded-md"
                   />
                 </div>
