@@ -22,9 +22,9 @@ const ExploreNewStyles = () => {
             <Image
               src="/assets/images/Image-16.png"
               alt="Large Image"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg shadow-lg"
+              fill
+              className="rounded-lg object-cover shadow-lg"
+              priority
             />
           </div>
 
@@ -35,9 +35,9 @@ const ExploreNewStyles = () => {
               <Image
                 src="/assets/images/Image-9.png"
                 alt="Image 1"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-md"
+                fill
+                className="rounded-lg object-cover shadow-md"
+                priority
               />
             </div>
 
@@ -46,9 +46,9 @@ const ExploreNewStyles = () => {
               <Image
                 src="/assets/images/Image-5.png"
                 alt="Image 2"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-md"
+                fill
+                className="rounded-lg object-cover shadow-md"
+                priority
               />
             </div>
 
@@ -57,9 +57,9 @@ const ExploreNewStyles = () => {
               <Image
                 src="/assets/images/Image-11.png"
                 alt="Image 3"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-md"
+                fill
+                className="rounded-lg object-cover shadow-md"
+                priority
               />
             </div>
 
@@ -68,9 +68,9 @@ const ExploreNewStyles = () => {
               <Image
                 src="/assets/images/Image-5.png"
                 alt="Image 4"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg shadow-md"
+                fill
+                className="rounded-lg object-cover shadow-md"
+                priority
               />
             </div>
           </div>

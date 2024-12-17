@@ -33,13 +33,17 @@ const SingleProductPage = () => {
               height={400}
               className="rounded-lg shadow-lg"
               priority
+              layout="intrinsic"
             />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-gray-800">{product.name}</h1>
             <p className="text-2xl text-teal-500 mt-4">{product.price}</p>
             <p className="text-gray-600 mt-4">{product.description}</p>
-            <button className="mt-6 px-6 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 flex items-center">
+            <button
+              className="mt-6 px-6 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 flex items-center"
+              aria-label={`Add ${product.name} to Cart`}
+            >
               <svg
                 className="w-5 h-5 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,7 @@ const SingleProductPage = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-800">Featured Products</h2>
+            <h2 className="text-2xl font-bold text-gray-800">FEATURED PRODUCTS</h2>
             <Link href="/products" className="text-blue-900 hover:underline">
               View all
             </Link>
@@ -76,7 +80,7 @@ const SingleProductPage = () => {
                   alt={product.name}
                   width={200}
                   height={160}
-                  style={{ objectFit: 'cover' }}
+                  layout="intrinsic"
                   className="rounded-md"
                 />
                 <h3 className="mt-4 text-gray-800">{product.name}</h3>

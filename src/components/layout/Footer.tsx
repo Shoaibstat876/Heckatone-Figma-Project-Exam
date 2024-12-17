@@ -12,11 +12,11 @@ import {
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { icon: faFacebookF, href: "#", label: "Facebook" },
-    { icon: faTwitter, href: "#", label: "Twitter" },
-    { icon: faInstagram, href: "#", label: "Instagram" },
-    { icon: faPinterest, href: "#", label: "Pinterest" },
-    { icon: faYoutube, href: "#", label: "YouTube" },
+    { icon: faFacebookF, href: "https://facebook.com", label: "Facebook" },
+    { icon: faTwitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: faInstagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: faPinterest, href: "https://pinterest.com", label: "Pinterest" },
+    { icon: faYoutube, href: "https://youtube.com", label: "YouTube" },
   ];
 
   const categories = [
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-white py-10 border-t border-gray-200">
+    <footer className="bg-white py-6 md:py-8 lg:py-10 border-t border-gray-200">
       <div className="container mx-auto px-6 max-w-screen-lg grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & Social Links */}
         <div>
@@ -59,6 +59,8 @@ const Footer: React.FC = () => {
                 key={label}
                 href={href}
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-teal-500 hover:text-white transition"
               >
                 <FontAwesomeIcon icon={icon} />

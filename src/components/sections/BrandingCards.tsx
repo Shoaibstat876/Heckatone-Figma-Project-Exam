@@ -24,7 +24,7 @@ const BrandingSection = () => {
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
-                className="max-h-32 object-contain"
+                className="object-contain max-h-20 sm:max-h-24 md:max-h-32" // Adjust height responsively
                 priority // Ensures images load faster
               />
             </figure>

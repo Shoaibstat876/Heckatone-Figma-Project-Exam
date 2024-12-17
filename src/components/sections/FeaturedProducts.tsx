@@ -1,51 +1,51 @@
-import React from 'react';
-import Image from 'next/image';
-import { PiShoppingCartSimpleLight } from 'react-icons/pi';
+import React from "react";
+import Image from "next/image";
+import { PiShoppingCartSimpleLight } from "react-icons/pi";
 
 // Sample product data
 const products = [
   {
     id: 1,
-    image: '/assets/images/Image-5.png',
-    name: 'Library Stool Chair',
-    price: '$20',
-    badge: 'New',
-    priceStyle: 'text-black font-[400]',
-    nameStyle: 'text-lg font-medium text-[#007580] font-[400]',
-    cartColor: 'bg-[#029fae] font-[400] hover:bg-teal-600',
-    iconColor: 'text-white',
+    image: "/assets/images/Image-5.png",
+    name: "Library Stool Chair",
+    price: "$20",
+    badge: "New",
+    priceStyle: "text-black font-[400]",
+    nameStyle: "text-lg font-medium text-[#007580] font-[400]",
+    cartColor: "bg-[#029fae] hover:bg-teal-600",
+    iconColor: "text-white",
   },
   {
     id: 2,
-    image: '/assets/images/Image-6.png',
-    name: 'Library Stool Chair',
-    price: '$30',
-    badge: 'Sale',
-    originalPrice: '$20',
-    priceStyle: 'text-black font-[400]',
-    nameStyle: 'text-lg font-medium font-[400]',
-    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600',
-    iconColor: 'text-black',
+    image: "/assets/images/Image-6.png",
+    name: "Library Stool Chair",
+    price: "$30",
+    badge: "Sale",
+    originalPrice: "$20",
+    priceStyle: "text-black font-[400]",
+    nameStyle: "text-lg font-medium font-[400]",
+    cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
+    iconColor: "text-black",
   },
   {
     id: 3,
-    image: '/assets/images/Image-8.png',
-    name: 'Library Stool Chair',
-    price: '$25',
-    priceStyle: 'text-black font-[400]',
-    nameStyle: 'text-lg font-medium',
-    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600',
-    iconColor: 'text-black',
+    image: "/assets/images/Image-8.png",
+    name: "Library Stool Chair",
+    price: "$25",
+    priceStyle: "text-black font-[400]",
+    nameStyle: "text-lg font-medium",
+    cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
+    iconColor: "text-black",
   },
   {
     id: 4,
-    image: '/assets/images/Image-9.png',
-    name: 'Library Stool Chair',
-    price: '$50',
-    priceStyle: 'text-black font-[400]',
-    nameStyle: 'text-lg font-medium',
-    cartColor: 'bg-[#f0f2f3] font-[500] hover:bg-gray-600',
-    iconColor: 'text-black',
+    image: "/assets/images/Image-9.png",
+    name: "Library Stool Chair",
+    price: "$50",
+    priceStyle: "text-black font-[400]",
+    nameStyle: "text-lg font-medium",
+    cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
+    iconColor: "text-black",
   },
 ];
 
@@ -64,18 +64,20 @@ const FeaturedProducts = () => {
               className="border rounded-lg p-4 shadow hover:shadow-lg transition flex flex-col min-h-[440px] h-auto"
             >
               {/* Image */}
-              <div className="relative w-full h-40 sm:h-48 lg:h-56">
+              <div className="relative w-full h-[200px] sm:h-[240px] lg:h-[300px]">
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={312}
-                  height={312}
+                  layout="responsive" // Ensures the image is responsive
+                  width={500} // Dynamic width
+                  height={300} // Dynamic height
                   className="rounded-md object-cover"
+                  priority={product.id === 1} // Ensures the first image loads faster
                 />
                 {product.badge && (
                   <span
                     className={`absolute top-2 left-2 px-2 py-1 text-xs font-bold text-white rounded ${
-                      product.badge === 'New' ? 'bg-green-500' : 'bg-red-500'
+                      product.badge === "New" ? "bg-green-500" : "bg-orange-500"
                     }`}
                   >
                     {product.badge}

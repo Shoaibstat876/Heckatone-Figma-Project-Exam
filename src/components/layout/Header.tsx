@@ -143,12 +143,11 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-          <div
-            className="text-gray-700 cursor-pointer hover:text-purple-900 transition"
-            onDoubleClick={() => window.location.href = "/contact"}
-          >
-            Contact: <span className="font-bold">(808) 555-0111</span>
-          </div>
+          <Link href="/contact">
+            <div className="text-gray-700 cursor-pointer hover:text-purple-900 transition">
+              Contact: <span className="font-bold">(808) 555-0111</span>
+            </div>
+          </Link>
         </div>
       </div>
     </header>
