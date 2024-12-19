@@ -16,61 +16,63 @@ const ExploreNewStyles = () => {
         </h2>
 
         {/* Layout Wrapper */}
-        <div className="flex flex-col lg:flex-row gap-8 ml-20">
+        <div className="flex flex-col lg:flex-row gap-8 lg:ml-20">
           {/* Large Image Section */}
-          <div className="w-full lg:w-[50%] h-[250px] sm:h-[300px] lg:h-[400px] relative">
-            <Image
-              src="/assets/images/Image-16.png"
-              alt="Large Image"
-              fill
-              className="rounded-lg object-cover shadow-lg"
-              priority
-            />
+          <div className="w-full lg:w-[50%] relative">
+            <div className="h-[250px] sm:h-[300px] lg:h-[400px] relative">
+              <Image
+                src="/assets/images/Image-16.png"
+                alt="Large Image"
+                fill
+                className="rounded-lg object-cover shadow-lg"
+                priority
+              />
+            </div>
           </div>
 
           {/* Smaller Images Section */}
           <div className="w-full lg:w-[50%] grid grid-cols-2 gap-6 sm:gap-8">
             {/* Image 1 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[190px] relative">
+            <div className="relative h-[140px] sm:h-[160px] lg:h-[190px]">
               <Image
                 src="/assets/images/Image-9.png"
                 alt="Image 1"
                 fill
                 className="rounded-lg object-cover shadow-md"
-                priority
+                priority={false}
               />
             </div>
 
             {/* Image 2 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[190px] relative">
+            <div className="relative h-[140px] sm:h-[160px] lg:h-[190px]">
               <Image
                 src="/assets/images/Image-5.png"
                 alt="Image 2"
                 fill
                 className="rounded-lg object-cover shadow-md"
-                priority
+                priority={false}
               />
             </div>
 
             {/* Image 3 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[195px] relative">
+            <div className="relative h-[140px] sm:h-[160px] lg:h-[190px]">
               <Image
                 src="/assets/images/Image-11.png"
                 alt="Image 3"
                 fill
                 className="rounded-lg object-cover shadow-md"
-                priority
+                priority={false}
               />
             </div>
 
             {/* Image 4 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[190px] relative">
+            <div className="relative h-[140px] sm:h-[160px] lg:h-[190px]">
               <Image
                 src="/assets/images/Image-5.png"
                 alt="Image 4"
                 fill
                 className="rounded-lg object-cover shadow-md"
-                priority
+                priority={false}
               />
             </div>
           </div>
