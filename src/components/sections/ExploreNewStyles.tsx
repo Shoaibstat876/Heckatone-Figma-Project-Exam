@@ -18,7 +18,7 @@ const ExploreNewStyles = () => {
         {/* Layout Wrapper */}
         <div className="flex flex-col lg:flex-row gap-8 lg:ml-20">
           {/* Large Image Section */}
-          <div className="w-full lg:w-[50%] relative">
+          <div className="w-full lg:w-[45%] relative">
             <div className="h-[250px] sm:h-[300px] lg:h-[400px] relative">
               <Image
                 src="/assets/images/Image-16.png"
@@ -31,7 +31,7 @@ const ExploreNewStyles = () => {
           </div>
 
           {/* Smaller Images Section */}
-          <div className="w-full lg:w-[50%] grid grid-cols-2 gap-6 sm:gap-8">
+          <div className="w-full lg:w-[55%] grid grid-cols-2 gap-6 sm:gap-8">
             {/* Image 1 */}
             <div className="relative h-[140px] sm:h-[160px] lg:h-[190px]">
               <Image
