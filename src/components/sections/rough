@@ -1,3 +1,105 @@
+current code (which you make )
+import React from "react";
+import Image from "next/image";
+
+const ExploreNewStyles = () => {
+  return (
+    <section className="py-8 bg-white w-full relative">
+      <div className="container mx-auto px-4 lg:px-6">
+        {/* Horizontal Heading for Small Screens */}
+        <h2
+          className="block lg:hidden text-center text-xl font-semibold text-gray-800 mb-6"
+          aria-label="Explore New and Popular Styles"
+        >
+          EXPLORE NEW AND POPULAR STYLES
+        </h2>
+
+        {/* Vertical Heading - Outside Large Image */}
+        <h2
+          className="absolute hidden lg:block -left-12 top-1/2 -translate-y-1/2 -rotate-90 text-xl lg:text-2xl font-semibold text-gray-800 whitespace-nowrap"
+          aria-label="Explore New and Popular Styles"
+        >
+          EXPLORE NEW AND POPULAR STYLES
+        </h2>
+
+        {/* Layout Wrapper */}
+        <div className="flex flex-col lg:flex-row gap-8 ml-20">
+          {/* Large Image Section */}
+          <div className="w-full lg:w-[50%] h-[250px] sm:h-[300px] lg:h-[400px] relative">
+            <Image
+              src="/assets/images/Image-16.png"
+              alt="Large Image"
+              fill
+              className="rounded-lg object-cover shadow-lg"
+              priority
+              aria-label="Large Image"
+            />
+          </div>
+
+          {/* Smaller Images Section */}
+          <div className="w-full lg:w-[50%] grid grid-cols-2 gap-4 sm:gap-6">
+            {/* Image 1 */}
+            <div className="w-full h-[200px] relative">
+              <Image
+                src="/assets/images/Image-9.png"
+                alt="Image 1"
+                width={200} // Set fixed width
+                height={200} // Set fixed height
+                className="rounded-lg object-cover shadow-md"
+                priority
+                aria-label="Image 1"
+              />
+            </div>
+
+            {/* Image 2 */}
+            <div className="w-full h-[200px] relative">
+              <Image
+                src="/assets/images/Image-5.png"
+                alt="Image 2"
+                width={200} // Set fixed width
+                height={200} // Set fixed height
+                className="rounded-lg object-cover shadow-md"
+                priority
+                aria-label="Image 2"
+              />
+            </div>
+
+            {/* Image 3 */}
+            <div className="w-full h-[200px] relative">
+              <Image
+                src="/assets/images/Image-11.png"
+                alt="Image 3"
+                width={200} // Set fixed width
+                height={200} // Set fixed height
+                className="rounded-lg object-cover shadow-md"
+                priority
+                aria-label="Image 3"
+              />
+            </div>
+
+            {/* Image 4 */}
+            <div className="w-full h-[200px] relative">
+              <Image
+                src="/assets/images/Image-5.png"
+                alt="Image 4"
+                width={200} // Set fixed width
+                height={200} // Set fixed height
+                className="rounded-lg object-cover shadow-md"
+                priority
+                aria-label="Image 4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ExploreNewStyles;
+
+backup code ( from github)
+
 import React from "react";
 import Image from "next/image";
 

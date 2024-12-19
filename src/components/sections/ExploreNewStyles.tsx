@@ -29,9 +29,9 @@ const ExploreNewStyles = () => {
           </div>
 
           {/* Smaller Images Section */}
-          <div className="w-full lg:w-[50%] grid grid-cols-2 gap-6 sm:gap-8">
+          <div className="w-full lg:w-[50%] grid grid-cols-2 gap-4 sm:gap-6">
             {/* Image 1 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[190px] relative">
+            <div className="w-full h-[120px] sm:h-[140px] lg:h-[190px] relative">
               <Image
                 src="/assets/images/Image-9.png"
                 alt="Image 1"
@@ -42,7 +42,7 @@ const ExploreNewStyles = () => {
             </div>
 
             {/* Image 2 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[190px] relative">
+            <div className="w-full h-[120px] sm:h-[140px] lg:h-[190px] relative">
               <Image
                 src="/assets/images/Image-5.png"
                 alt="Image 2"
@@ -53,7 +53,7 @@ const ExploreNewStyles = () => {
             </div>
 
             {/* Image 3 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[195px] relative">
+            <div className="w-full h-[120px] sm:h-[140px] lg:h-[195px] relative">
               <Image
                 src="/assets/images/Image-11.png"
                 alt="Image 3"
@@ -64,7 +64,7 @@ const ExploreNewStyles = () => {
             </div>
 
             {/* Image 4 */}
-            <div className="w-full h-[140px] sm:h-[160px] lg:h-[190px] relative">
+            <div className="w-full h-[120px] sm:h-[140px] lg:h-[190px] relative">
               <Image
                 src="/assets/images/Image-5.png"
                 alt="Image 4"
