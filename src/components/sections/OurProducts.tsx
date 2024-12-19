@@ -113,11 +113,13 @@ const OurProducts = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="responsive" // Using responsive layout for better scaling
-                  width={500} // Adjusting width for responsiveness
-                  height={500} // Adjusting height for responsiveness
+                  width={500}
+                  height={300}
                   className="rounded-md object-cover"
                   priority={product.id === 1}
+                  onError={(e) => {
+                    e.currentTarget.src = "/assets/images/placeholder.png"; // Fallback Image
+                  }}
                 />
                 {/* Badge */}
                 {product.badge && (
@@ -132,28 +134,28 @@ const OurProducts = () => {
               </div>
 
               {/* Product Name */}
-              <h3 className={`${product.nameStyle} mt-4 flex-grow`}>{product.name}</h3>
+              <h3 className={`${product.nameStyle} mt-4 flex-grow`}>
+                {product.name}
+              </h3>
 
               {/* Product Price and Cart Button */}
               <div className="flex items-center justify-between mt-2">
-                <p className="text-gray-600">
+                <div>
                   {product.id === 2 || product.id === 6 ? (
-                    <>
-                      <span className="text-black mr-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-gray-500 font-[400] line-through">
                         {product.originalPrice}
                       </span>
-                      <span className="text-gray-500 font-[400] line-through">
-                        {product.price}
-                      </span>
-                    </>
+                      <span className="text-black">{product.price}</span>
+                    </div>
                   ) : (
                     <span className={product.priceStyle}>{product.price}</span>
                   )}
-                </p>
+                </div>
 
                 {/* Cart Button */}
                 <button
-                  className={`${product.cartColor} text-white p-2 rounded-full hover:bg-opacity-80`}
+                  className={`${product.cartColor} text-white p-2 rounded-full hover:bg-opacity-80 transition-transform transform hover:scale-105`}
                   aria-label="Add to Cart"
                 >
                   <PiShoppingCartSimpleLight
