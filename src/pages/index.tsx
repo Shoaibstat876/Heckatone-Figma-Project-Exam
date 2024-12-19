@@ -6,7 +6,7 @@ import FeaturedProducts from '@/components/sections/FeaturedProducts';
 import TopCategories from '@/components/sections/TopCategories';
 import ExploreNewStyles from '@/components/sections/ExploreNewStyles';
 import OurProducts from '@/components/sections/OurProducts';
-import Header from '@/components/layout/Header';
+
 
 const Home = () => {
   return (
