@@ -19,9 +19,9 @@ const products = [
     id: 2,
     image: "/assets/images/Image-6.png",
     name: "Library Stool Chair",
-    price: "$30",
+    price: "$20",
     badge: "Sale",
-    originalPrice: "$20",
+    originalPrice: "$30",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -31,7 +31,7 @@ const products = [
     id: 3,
     image: "/assets/images/Image-8.png",
     name: "Library Stool Chair",
-    price: "$25",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -41,7 +41,7 @@ const products = [
     id: 4,
     image: "/assets/images/Image-9.png",
     name: "Library Stool Chair",
-    price: "$50",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -51,7 +51,7 @@ const products = [
     id: 5,
     image: "/assets/images/Image-10.png",
     name: "Modern Chair",
-    price: "$40",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -61,7 +61,9 @@ const products = [
     id: 6,
     image: "/assets/images/Image-11.png",
     name: "Comfort Sofa",
-    price: "$150",
+    price: "$20",
+    badge: "Sale",
+    originalPrice: "$30",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -71,7 +73,7 @@ const products = [
     id: 7,
     image: "/assets/images/Image-12.png",
     name: "Office Chair",
-    price: "$80",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -81,7 +83,7 @@ const products = [
     id: 8,
     image: "/assets/images/Image-13.png",
     name: "Dining Table",
-    price: "$200",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -133,8 +135,8 @@ const OurProducts = () => {
                 <p className={product.priceStyle}>
                   {product.originalPrice ? (
                     <>
-                      <span className="line-through text-gray-500">{product.originalPrice}</span>
-                      <span className="ml-2">{product.price}</span>
+                      <span>{product.price}</span>
+                      <span className="ml-2 line-through text-gray-500">{product.originalPrice}</span>
                     </>
                   ) : (
                     product.price

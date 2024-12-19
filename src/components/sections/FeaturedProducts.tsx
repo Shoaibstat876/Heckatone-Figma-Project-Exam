@@ -11,7 +11,7 @@ const products = [
     price: "$20",
     badge: "New",
     priceStyle: "text-black font-[400]",
-    nameStyle: "text-lg font-medium text-[#007580] font-[400]",
+    nameStyle: "text-lg font-medium text-[#007580]",
     cartColor: "bg-[#029fae] hover:bg-teal-600",
     iconColor: "text-white",
   },
@@ -19,9 +19,9 @@ const products = [
     id: 2,
     image: "/assets/images/Image-6.png",
     name: "Library Stool Chair",
-    price: "$30",
+    price: "$20",
     badge: "Sale",
-    originalPrice: "$20",
+    originalPrice: "$30",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -31,7 +31,7 @@ const products = [
     id: 3,
     image: "/assets/images/Image-8.png",
     name: "Library Stool Chair",
-    price: "$25",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -41,7 +41,7 @@ const products = [
     id: 4,
     image: "/assets/images/Image-9.png",
     name: "Library Stool Chair",
-    price: "$50",
+    price: "$20",
     priceStyle: "text-black font-[400]",
     nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -93,8 +93,8 @@ const FeaturedProducts = () => {
                 <p className={product.priceStyle}>
                   {product.originalPrice ? (
                     <>
-                      <span className="line-through text-gray-500">{product.originalPrice}</span>
-                      <span className="ml-2">{product.price}</span>
+                      <span>{product.price}</span>
+                      <span className="ml-2 line-through text-gray-500">{product.originalPrice}</span>
                     </>
                   ) : (
                     product.price
