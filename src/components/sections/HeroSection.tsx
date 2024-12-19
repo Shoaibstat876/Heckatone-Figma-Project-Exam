@@ -20,7 +20,7 @@ const HeroSection = () => {
           </p>
           <button
             className="mt-6 px-6 py-3 bg-teal-500 text-white rounded-lg shadow hover:bg-teal-600 transition"
-            aria-label="Shop Now"
+            aria-label="Shop Now - Discover our Furniture"
           >
             Shop Now <span className="ml-2">→</span>
           </button>
@@ -35,6 +35,7 @@ const HeroSection = () => {
             height={400}
             className="rounded-lg"
             priority={true} // Ensures faster loading for hero image
+            layout="intrinsic" // Allows for better image scaling across screen sizes
           />
         </div>
       </div>

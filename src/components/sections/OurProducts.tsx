@@ -64,7 +64,7 @@ const products = [
     name: "Library Stool Chair",
     price: "$30",
     badge: "Sale",
-    originalPrice: "$50",
+    originalPrice: "$20",
     nameStyle: "text-lg font-[400] text-[#000000]",
     priceStyle: "text-[#000000] font-[400]",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
@@ -113,9 +113,9 @@ const OurProducts = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="intrinsic" // Use intrinsic layout for better scaling
-                  width={312} // Set width based on image size
-                  height={312} // Set height based on image size
+                  layout="responsive" // Using responsive layout for better scaling
+                  width={500} // Adjusting width for responsiveness
+                  height={500} // Adjusting height for responsiveness
                   className="rounded-md object-cover"
                   priority={product.id === 1}
                 />
@@ -132,9 +132,7 @@ const OurProducts = () => {
               </div>
 
               {/* Product Name */}
-              <h3 className={`${product.nameStyle} mt-4 flex-grow`}>
-                {product.name}
-              </h3>
+              <h3 className={`${product.nameStyle} mt-4 flex-grow`}>{product.name}</h3>
 
               {/* Product Price and Cart Button */}
               <div className="flex items-center justify-between mt-2">

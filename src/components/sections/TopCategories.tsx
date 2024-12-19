@@ -38,7 +38,7 @@ const TopCategories = () => {
               className="relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition"
             >
               {/* Category Image */}
-              <div className="relative w-full h-72"> {/* Adjusted height to make it bigger */}
+              <div className="relative w-full sm:h-[250px] lg:h-[300px]"> {/* Adjusted responsive height */}
                 <Image
                   src={category.image} // Image source
                   alt={category.name} // Alt text for accessibility
@@ -51,7 +51,7 @@ const TopCategories = () => {
               </div>
 
               {/* Overlay with Text */}
-              <div className="absolute inset-0 bg-black bg-opacity-10 flex flex-col justify-end p-4"> {/* Reduced opacity for a soft shadow */}
+              <div className="absolute inset-0 bg-black bg-opacity-10 flex flex-col justify-end p-6"> {/* Increased padding for better spacing */}
                 <h3 className="text-lg font-bold text-white">{category.name}</h3>
                 <p className="text-sm text-gray-300">{category.products}</p>
               </div>

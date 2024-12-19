@@ -18,13 +18,17 @@ const BrandingSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center">
           {logos.map((logo) => (
-            <figure key={logo.alt} className="flex items-center justify-center">
+            <figure
+              key={logo.alt}
+              className="flex items-center justify-center"
+              aria-label={`Brand logo for ${logo.alt}`}
+            >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
-                className="object-contain max-h-20 sm:max-h-24 md:max-h-32" // Adjust height responsively
+                className="object-contain max-h-20 sm:max-h-24 md:max-h-32 h-auto" // Improved height handling
                 priority // Ensures images load faster
               />
             </figure>
