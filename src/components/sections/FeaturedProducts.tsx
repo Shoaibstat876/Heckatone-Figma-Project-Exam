@@ -23,7 +23,7 @@ const products = [
     badge: "Sale",
     originalPrice: "$20",
     priceStyle: "text-black font-[400]",
-    nameStyle: "text-lg font-medium font-[400]",
+    nameStyle: "text-lg font-medium",
     cartColor: "bg-[#f0f2f3] font-[500] hover:bg-gray-600",
     iconColor: "text-black",
   },
@@ -68,11 +68,11 @@ const FeaturedProducts = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="responsive" // Ensures the image is responsive
-                  width={500} // Dynamic width
-                  height={300} // Dynamic height
+                  layout="responsive"
+                  width={500}
+                  height={300}
                   className="rounded-md object-cover"
-                  priority={product.id === 1} // Ensures the first image loads faster
+                  priority={product.id === 1}
                 />
                 {product.badge && (
                   <span
@@ -88,22 +88,18 @@ const FeaturedProducts = () => {
               {/* Name */}
               <h3 className={`${product.nameStyle} mt-4 flex-grow`}>{product.name}</h3>
 
-              {/* Price */}
-              <div className="mt-2">
+              {/* Price and Cart Icon */}
+              <div className="flex items-center justify-between mt-4">
                 <p className={product.priceStyle}>
-                  {product.id === 2 ? (
+                  {product.originalPrice ? (
                     <>
-                      <span className="mr-2">{product.originalPrice}</span>
-                      <span className="line-through text-gray-500">{product.price}</span>
+                      <span className="line-through text-gray-500">{product.originalPrice}</span>
+                      <span className="ml-2">{product.price}</span>
                     </>
                   ) : (
                     product.price
                   )}
                 </p>
-              </div>
-
-              {/* Cart Button */}
-              <div className="mt-4 flex justify-end">
                 <button
                   className={`${product.cartColor} text-white p-2 rounded-full hover:bg-opacity-80`}
                   aria-label="Add to Cart"
