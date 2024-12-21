@@ -1,7 +1,6 @@
-import React from 'react'; // Import React for JSX
-import Layout from '@/components/layout/Layout'; // Import Layout for consistent page structure
+import React, { useState } from 'react';
+import Layout from '@/components/layout/Layout';
 
-// FAQ data
 const faqs = [
   {
     question: 'What types of chairs do you offer?',
@@ -16,7 +15,7 @@ const faqs = [
     answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?',
   },
   {
-    question: 'What will be delivered? And When?',
+    question: 'What will be delivered? And when?',
     answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi quis modi ullam amet debitis libero veritatis enim repellat optio natus eum delectus deserunt, odit expedita eos molestiae ipsa totam quidem?',
   },
   {
@@ -30,88 +29,65 @@ const faqs = [
 ];
 
 const FaqPage = () => {
+  const [openIndices, setOpenIndices] = useState<number[]>([]);
+
+  const toggleAnswer = (index: number) => {
+    // Check if the index is already open
+    if (openIndices.includes(index)) {
+      setOpenIndices(openIndices.filter((i) => i !== index)); // Close it
+    } else {
+      setOpenIndices([...openIndices, index]); // Open it while keeping others open
+    }
+  };
+
   return (
     <Layout>
       {/* Title Section */}
       <section className="py-16 text-center">
-        {/* 
-          Section Styling:
-          - `py-16`: Adds vertical padding for spacing.
-          - `text-center`: Centers the text horizontally.
-        */}
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">Questions Looks Here</h1>
-          {/* 
-            Title Styling:
-            - `text-3xl`: Large font size for prominence.
-            - `font-bold`: Bold font for emphasis.
-            - `text-gray-800`: Dark gray color for readability.
-            - `mb-4`: Adds margin below the title for spacing.
-          */}
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h1>
           <p className="text-gray-600">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
           </p>
-          {/* Subheading text */}
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-10">
-        {/* 
-          Section Styling:
-          - `py-10`: Adds vertical padding for spacing.
-        */}
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* 
-            Grid Layout:
-            - Single column (`grid-cols-1`) for small screens.
-            - Two columns (`md:grid-cols-2`) for medium and larger screens.
-            - `gap-6`: Adds spacing between grid items.
-          */}
           {faqs.map((faq, index) => (
             <div
-              key={index} // Unique key for each FAQ
+              key={index}
               className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition"
-              /* 
-                FAQ Card Styling:
-                - `bg-gray-50`: Light gray background.
-                - `border border-gray-200`: Adds a border with a subtle gray color.
-                - `p-6`: Adds padding inside the card.
-                - `rounded-lg`: Rounded corners for modern design.
-                - `shadow-sm`: Subtle shadow for depth.
-                - `hover:shadow-md`: Enhanced shadow on hover for interactivity.
-                - `transition`: Smooth animation for hover effects.
-              */
             >
-              {/* Question and Icon */}
-              <div className="flex items-center justify-between">
-                {/* 
-                  Layout:
-                  - `flex`: Aligns question and icon side-by-side.
-                  - `items-center`: Vertically aligns them.
-                  - `justify-between`: Spreads content horizontally with space between.
-                */}
+              {/* Question */}
+              <div
+                className="flex items-center justify-between cursor-pointer"
+                onClick={() => toggleAnswer(index)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') toggleAnswer(index);
+                }}
+                role="button"
+                tabIndex={0}
+                aria-expanded={openIndices.includes(index)}
+              >
                 <h3 className="font-bold text-gray-800">{faq.question}</h3>
-                {/* 
-                  Question Styling:
-                  - `font-bold`: Bold font for emphasis.
-                  - `text-gray-800`: Dark gray color for readability.
-                */}
-                <span className="text-gray-600 text-xl font-bold">+</span>
-                {/* 
-                  Icon Styling:
-                  - `text-gray-600`: Light gray color for subtlety.
-                  - `text-xl`: Larger font size for visibility.
-                  - `font-bold`: Bold weight for prominence.
-                */}
+                <span
+                  className={`text-gray-600 text-xl font-bold transform transition-transform duration-300 ${
+                    openIndices.includes(index) ? 'rotate-45' : ''
+                  }`}
+                >
+                  +
+                </span>
               </div>
-              {/* Answer */}
-              <p className="text-gray-600 mt-4">{faq.answer}</p>
-              {/* 
-                Answer Styling:
-                - `text-gray-600`: Light gray color for readability.
-                - `mt-4`: Adds margin above the answer for spacing.
-              */}
+              {/* Answer with Slide Animation */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndices.includes(index) ? 'max-h-screen mt-4' : 'max-h-0'
+                }`}
+              >
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -120,4 +96,4 @@ const FaqPage = () => {
   );
 };
 
-export default FaqPage; // Exporting the FaqPage component
+export default FaqPage;
